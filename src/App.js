@@ -1,25 +1,41 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from "./components/Navbar.js"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import reactlogo from './images/react-logo.png';
+import ReactIconLarge from "./images/react-icon-large.png";
+import MainBg from "./components/MainBg.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+
+function MainPage(){
+    return(
+        <div class="container col-12 col-lg-6">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <div>
+                    <div>
+                        <Navbar/>
+                    </div>
+                    <div>
+                        <MainBg/>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    )
 }
 
-export default App;
+
+export default function App(){
+  root.render(  <MainPage/> , document.getElementById("root"))
+
+}
